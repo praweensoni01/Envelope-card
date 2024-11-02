@@ -150,3 +150,82 @@ body{
         transform: scaleX(.85);
     }
 }
+
+.hearts{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: -1;
+}
+@keyframes hearts {
+   
+}
+
+.one, .two, .three, .four, .five {
+    background-color: rgb(252, 0, 0);
+    height: 50px;
+    width: 50px;
+    flex-direction: row;
+    position: relative;
+    transform: rotate(-45deg);
+    opacity: .6;
+    animation: floatUp 3s ease-in-out infinite;
+}
+
+.one::before, .one::after, .two::before, .two::after, 
+.three::before, .three::after, .four::before, .four::after, 
+.five::before, .five::after {
+    content: '';
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(252, 0, 0); /* Adjusted color for the heart */
+    position: absolute;
+}
+
+.one::before, .two::before, .three::before, .four::before, .five::before {
+    top: -25px;
+    left: 0;
+}
+
+.one::after, .two::after, .three::after, .four::after, .five::after {
+    top: 0;
+    left: 25px;
+}
+
+@keyframes floatUp {
+    0% {
+        bottom: -100%;
+        transform: scale(0.3);
+        opacity: 1;
+    }
+    100% {
+        opacity: .5;
+        bottom: 0;
+    }
+    0%{
+    }
+    100%{
+    }
+}
+.one {
+    animation-delay: 1s;
+}
+
+.two {
+    animation-delay: 2s;
+}
+
+.three {
+    animation-delay: 1s;
+}
+
+.four {
+    animation-delay: 2s;
+}
+
+.five {
+    animation-delay: 1s;
+}
